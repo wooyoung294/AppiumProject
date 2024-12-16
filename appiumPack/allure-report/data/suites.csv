@@ -1,3 +1,4 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","17669","test_case_01","","Mon Dec 16 18:26:54 KST 2024","passed","Mon Dec 16 18:27:12 KST 2024","","test_Login","",""
 "","10351","test_case_01","","Sun Dec 15 07:26:21 KST 2024","passed","Sun Dec 15 07:26:32 KST 2024","","test","",""
 "","16029","test_case_01","","Mon Dec 16 00:43:03 KST 2024","passed","Mon Dec 16 00:43:19 KST 2024","","test_final","",""
