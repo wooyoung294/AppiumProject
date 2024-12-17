@@ -50,7 +50,7 @@ def test_clickClock(driver):
     clock = getElement(driver,'XPATH','//android.widget.TextView[@content-desc="Clock"]')
     clock.click()
 
-def test_clickWebtoon(self,driver):
+def test_clickWebtoon(driver):
     webtoon = driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@content-desc="Naver Webtoon"]')
     webtoon.click()
 

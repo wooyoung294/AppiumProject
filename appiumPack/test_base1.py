@@ -20,7 +20,7 @@ def driver():
     driver.press_keycode(3)
     driver.quit()
 
-def test_clickClock(self,driver):
+def test_clickClock(driver):
     # clock = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value='Clock')
     clock = driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@content-desc="Clock"]')
     # clock = driver.find_element(By.XPATH, '//android.widget.TextView[@content-desc="Clock"]')
