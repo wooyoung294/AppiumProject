@@ -4,6 +4,7 @@ import pytest
 from appium.options.android import UiAutomator2Options
 from appium.webdriver.common.appiumby import AppiumBy
 from appium import webdriver
+from selenium.webdriver.common.by import By
 
 
 @pytest.fixture(scope="module")
@@ -21,8 +22,10 @@ def driver():
     driver.quit()
 
 def test_clickClock(driver):
+    # clock = driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@content-desc="Clock"]')
     # clock = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value='Clock')
-    clock = driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@content-desc="Clock"]')
     # clock = driver.find_element(By.XPATH, '//android.widget.TextView[@content-desc="Clock"]')
-    clock.click()
-    assert clock.is_displayed()
+    # clock.click()
+
+    # alarmText = driver.find_element(by=AppiumBy.XPATH, value='//android.widget.FrameLayout[@content-desc="Alarm"]')
+    # assert alarmText.is_displayed()

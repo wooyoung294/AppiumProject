@@ -1,4 +1,6 @@
-from datetime import time
+import base64
+import os
+from datetime import time, datetime
 from distutils.util import strtobool
 
 import pytest
@@ -41,6 +43,10 @@ def driver():
 
 class TestLogin:
     def test_SuccessLogin(self,driver):
+
+        SCREENPATH = '/Applications/recording'
+        videoFilePath = os.path.join(SCREENPATH, datetime.today().strftime("%Y%m%d")+'recording.mp4')
+        driver.start_recording_screen()
         name = 'ONYU'
         nameInput = waitElement(driver,
                                  '//android.widget.EditText[@resource-id="com.example.appiumtestapp:id/editTextText"]')
@@ -62,4 +68,8 @@ class TestLogin:
         welcomeText = waitElement(driver,
                                    '//android.widget.TextView[@resource-id="com.example.appiumtestapp:id/welcomeText"]')
         assert welcomeText.text == name + '님 환영합니다!!!'
+        videoBase = driver.stop_recording_screen()
+
+        with open(videoFilePath, 'wb') as videoFile:
+            videoFile.write(base64.b64decode(videoBase))
 
