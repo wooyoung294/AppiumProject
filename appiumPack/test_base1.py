@@ -9,23 +9,38 @@ from selenium.webdriver.common.by import By
 
 @pytest.fixture(scope="module")
 def driver():
+
+    # Appium Inspector의 Capability Builder 값과 동일함
     options = UiAutomator2Options()
     options.set_capability("platformName", "Android")
-    options.set_capability("automationName", "uiautomator2")
+    options.set_capability("appium:automationName", "uiautomator2")
+    # options.set_capability("locale", "KR")
+    # options.set_capability("language", "ko")
+    # options.set_capability("app", "path/***.apk")
+    # options.set_capability("appPackage", "com.ex.app")
 
+    # Appium 서버 주소
     appium_server_url = 'http://localhost:4723'
 
+    # 서버로 연결해
     driver = webdriver.Remote(appium_server_url, options=options)
 
+    # driver = webdriver.Remote(appium_server_url, options=UiAutomator2Options().load_capabilities(capabilities))
+
+    # 테스트 끝날 때까지 기다려
     yield driver
+    # 홈버튼 눌러
     driver.press_keycode(3)
+    # 연결 종료해
     driver.quit()
 
 def test_clickClock(driver):
     # clock = driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@content-desc="Clock"]')
     # clock = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value='Clock')
     # clock = driver.find_element(By.XPATH, '//android.widget.TextView[@content-desc="Clock"]')
-    # clock.click()
+
+    # 1초 기다려
+    time.sleep(1)
 
     # alarmText = driver.find_element(by=AppiumBy.XPATH, value='//android.widget.FrameLayout[@content-desc="Alarm"]')
     # assert alarmText.is_displayed()
