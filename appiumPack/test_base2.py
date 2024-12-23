@@ -14,8 +14,8 @@ def driver():
     options = UiAutomator2Options()
     options.set_capability("platformName", "Android")
     options.set_capability("appium:automationName", "uiautomator2")
-    # options.set_capability("locale", "KR")
-    # options.set_capability("language", "ko")
+    options.set_capability("locale", "US")
+    options.set_capability("language", "en")
     # options.set_capability("app", "path/***.apk")
     # options.set_capability("appPackage", "com.ex.app")
 
@@ -23,6 +23,8 @@ def driver():
     # myCapabilities = dict(
     #     platformName='Android',
     #     automationName='Uiautomator2',
+    #     locale='CN',
+    #     language='zh'
     # )
 
     # Appium 서버 주소
@@ -46,7 +48,6 @@ def driver():
 #     moduleDriver.press_keycode(3)
 
 def getElement(driver, by,value):
-    # print("platformName:", driver.capabilities['platformName'])
 
     # 찾는 조건이 XPATH 일 경우
     if by == 'XPATH':
@@ -55,6 +56,9 @@ def getElement(driver, by,value):
     elif by == 'ACCESS_ID':
         return driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value=value)
 
+    print("language:", driver.capabilities['language'])
+    # if driver.capabilities['language'] == 'zh':
+    #     return driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@content-desc="时钟"]')
 
 def test_clickClock(driver):
     # clock = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value='Clock')
