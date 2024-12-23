@@ -84,5 +84,5 @@ class TestClickApps:
         alarmText = getElement(driver,'XPATH', '//android.widget.FrameLayout[@content-desc="Alarm"]')
         assert alarmText.is_displayed()
     def test_clickCamera(self,driver):
-        camera = getElement('XPATH', '//android.widget.TextView[@content-desc="Camera"]')
+        camera = getElement(driver,'XPATH', '//android.widget.TextView[@content-desc="Camera"]')
         camera.click()
