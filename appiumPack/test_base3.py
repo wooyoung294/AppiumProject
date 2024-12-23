@@ -1,4 +1,4 @@
-from datetime import time
+import time
 from distutils.util import strtobool
 
 import pytest
@@ -45,6 +45,7 @@ class TestLogin:
         nameInput = waitElement(driver,
                                  '//android.widget.EditText[@resource-id="com.example.appiumtestapp:id/editTextText"]')
         nameInput.click()
+        time.sleep(1)
         nameInput.send_keys(name)
         assert nameInput.text == name
 
@@ -54,6 +55,7 @@ class TestLogin:
 
         checkBox = waitElement(driver, '//android.widget.CheckBox[@resource-id="com.example.appiumtestapp:id/checkBox"]')
         checkBox.click()
+        time.sleep(1)
         assert strtobool(checkBox.get_attribute('checked')) == True
 
         loginBtn = waitElement(driver, '//android.widget.Button[@resource-id="com.example.appiumtestapp:id/button"]')
