@@ -14,8 +14,8 @@ def driver():
     options = UiAutomator2Options()
     options.set_capability("platformName", "Android")
     options.set_capability("appium:automationName", "uiautomator2")
-    # options.set_capability("locale", "KR")
-    # options.set_capability("language", "ko")
+    # options.set_capability("locale", "CN")
+    # options.set_capability("language", "zh")
     # options.set_capability("app", "path/***.apk")
     # options.set_capability("appPackage", "com.ex.app")
 
@@ -24,8 +24,6 @@ def driver():
 
     # 서버로 연결해
     driver = webdriver.Remote(appium_server_url, options=options)
-
-    # driver = webdriver.Remote(appium_server_url, options=UiAutomator2Options().load_capabilities(capabilities))
 
     # 테스트 끝날 때까지 기다려
     yield driver
@@ -41,6 +39,5 @@ def test_clickClock(driver):
 
     # 1초 기다려
     time.sleep(1)
-
     # alarmText = driver.find_element(by=AppiumBy.XPATH, value='//android.widget.FrameLayout[@content-desc="Alarm"]')
     # assert alarmText.is_displayed()
