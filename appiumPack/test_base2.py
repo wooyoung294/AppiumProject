@@ -20,7 +20,7 @@ def driver():
     # options.set_capability("appPackage", "com.ex.app")
 
     # UiAutomator2Options 값을 dict형태로 변환
-    # capabilities = dict(
+    # myCapabilities = dict(
     #     platformName='Android',
     #     automationName='Uiautomator2',
     # )
@@ -31,7 +31,7 @@ def driver():
     # 서버로 연결해
     driver = webdriver.Remote(appium_server_url, options=options)
 
-    # driver = webdriver.Remote(appium_server_url, options=UiAutomator2Options().load_capabilities(capabilities))
+    # driver = webdriver.Remote(appium_server_url, options=UiAutomator2Options().load_capabilities(myCapabilities))
 
     # 테스트 끝날 때까지 기다려
     yield driver
