@@ -23,8 +23,8 @@ def driver():
     # myCapabilities = dict(
     #     platformName='Android',
     #     automationName='Uiautomator2',
-    #     locale='CN',
-    #     language='zh'
+    #     locale='US',
+    #     language='en'
     # )
 
     # Appium 서버 주소
