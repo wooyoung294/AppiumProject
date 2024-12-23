@@ -7,15 +7,17 @@ from appium import webdriver
 from selenium.webdriver.common.by import By
 
 
+
 @pytest.fixture(scope="module")
 def driver():
-
     # Appium Inspector의 Capability Builder 값과 동일함
     options = UiAutomator2Options()
+    # 우영   =  원숭이
+
     options.set_capability("platformName", "Android")
     options.set_capability("appium:automationName", "uiautomator2")
-    # options.set_capability("locale", "CN")
-    # options.set_capability("language", "zh")
+    options.set_capability("appium:locale", "CN")
+    options.set_capability("appium:language", "zh")
     # options.set_capability("app", "path/***.apk")
     # options.set_capability("appPackage", "com.ex.app")
 
@@ -32,12 +34,16 @@ def driver():
     # 연결 종료해
     driver.quit()
 
-def test_clickClock(driver):
+def test_click_clock(driver):
     # clock = driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@content-desc="Clock"]')
     # clock = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value='Clock')
     # clock = driver.find_element(By.XPATH, '//android.widget.TextView[@content-desc="Clock"]')
+    el1 = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Clock")
+    el1.click()
 
     # 1초 기다려
-    time.sleep(1)
+    # time.sleep(1)
+    alarmText = driver.find_element(by=AppiumBy.XPATH,value='//android.widget.FrameLayout[@content-desc="Alarm"]')
+    assert alarmText.is_displayed()
     # alarmText = driver.find_element(by=AppiumBy.XPATH, value='//android.widget.FrameLayout[@content-desc="Alarm"]')
     # assert alarmText.is_displayed()
