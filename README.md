@@ -7,7 +7,6 @@ Appium을 이용해 Android App을 테스트 해보자
 
 <hr/>
 
-#### OS      : MAC
 #### Test OS : Android
 #### Python  : 3.x
 #### Java    : 17
