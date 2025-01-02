@@ -13,6 +13,7 @@ Appium을 이용해 Android App을 테스트 해보자
 #### TestF/W : Pytest
 #### Report  : Allure
 #### URL     : [TestReport](https://icy-smoke-08e20f11e.4.azurestaticapps.net/#)
+#### Video   : [TestVideo](https://youtu.be/qVwRWyDyN_A)
 #### IDE     : PyCharm
 
 <hr/>
