@@ -3,9 +3,9 @@
 <hr/>
 
 #### Projcet Desc
-Appium을 이용해 노머스의 FrommForArti Android App을 테스트 해보기전 공부한 내용입니다. 
-FrommForArti 앱의 테스트 코드에는 QA용 ID 및 정보들이 들어있어 코드는 업로드 하지 않았습니다.
-해당 테스트 내용은 하단의 TestVideo에서 테스트 영상을 보실 수 있고 리포트는 TestReport에서 보실수 있습니다.
+Appium을 이용해 노머스의 FrommForArti Android App을 테스트 해보기전 공부한 내용입니다. <br/>
+FrommForArti 앱의 테스트 코드에는 QA용 ID 및 정보들이 들어있어 코드는 업로드 하지 않았지만 <br/>
+테스트 내용은 하단의 TestVideo에서 테스트 영상을 보실 수 있고 리포트는 TestReport에서 보실수 있습니다.
 
 <hr/>
 
